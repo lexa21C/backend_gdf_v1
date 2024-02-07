@@ -7,7 +7,7 @@ const LearningResultsController=require('../controllers/LearningResultsControlle
 router.get('/learningResults/:competence_id',LearningResultsController.listLearningResults)
 router.post('/learningResults',LearningResultsController.createResults)
 router.put('/learningResults/:code',LearningResultsController.updateResults);
-router.delete('/learningResults/:id_result', LearningResultsController.deleteResults)
+router.delete('/learningResult/:id_result', LearningResultsController.deleteResults)
 router.get('/learningResults/show/:id_Result',LearningResultsController.resultById);
 
 module.exports = router;

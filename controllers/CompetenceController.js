@@ -2,7 +2,7 @@ const Competences = require('../models/Competence.js')
 const Formation_programs = require('../models/Formation_programs.js')
 const ApiStructure = require('../helpers/responseApi.js')
 const Artiffacts = require('../models/Artiffacts.js')
-
+var mongoose = require('mongoose')
 
 exports.allCompentences = async (req, res) => {
     const apiStructure = new ApiStructure();
@@ -29,7 +29,7 @@ exports.competenceId = async (req, res) => {
     const apiStructure = new ApiStructure();
     try {
         const id_competence = req.params.id_competence;
-        const competence = await Competence.findById(id_competence);
+        const competence = await Competences.findById(id_competence);
 
         if (competence) {
             apiStructure.setResult(competence);
@@ -57,7 +57,10 @@ exports.createCompetences = async (req, res) => {
         // quarter,
         // program
     } = req.body;
-    const _id = labor_competence_code
+    const newObjectId = new mongoose.Types.ObjectId();
+
+        // Convierte el ObjectId a string
+        const newObjectIdString = newObjectId.toString();
 
     // let arrayF = []
     // for (let i = 0; i < formation_programs.length; i++) {
@@ -71,8 +74,8 @@ exports.createCompetences = async (req, res) => {
     // res.json(foundformation_programs._id)
 
     try {
-        const createdCompetence = await Competence.create({
-            _id,
+        const createdCompetence = await Competences.create({
+            _id: newObjectIdString,
             labor_competition,
             labor_competence_code,
             program_competition,
@@ -207,7 +210,7 @@ exports.updateCompetences = async (req, res) => {
             program
         } = req.body;
 
-        const competenceUpdate = await Competence.findByIdAndUpdate(
+        const competenceUpdate = await Competences.findByIdAndUpdate(
             id_competence,
             {
                 labor_competition,
@@ -239,7 +242,7 @@ exports.deleteCompetence = async (req, res) => {
 
     try {
         const { id_competence } = req.params;
-        const competence = await Competence.findByIdAndDelete(id_competence);
+        const competence = await Competences.findByIdAndDelete(id_competence);
 
         if (competence) {
             apiStructure.setResult("Competencia eliminada correctamente");

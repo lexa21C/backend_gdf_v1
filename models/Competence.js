@@ -2,9 +2,12 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-var Competence = Schema(
+var Competences = Schema(
   {
- 
+    _id: {
+      type: mongoose.Schema.Types.Mixed,
+      default: () => mongoose.Types.ObjectId()// Genera automáticamente un ObjectId y lo convierte a string
+  },
     labor_competition: String,
     labor_competence_code: Number,
     program_competition: String,
@@ -24,4 +27,4 @@ var Competence = Schema(
   }
 );
 
-module.exports = mongoose.model("Competences", Competence);
+module.exports = mongoose.model("Competences", Competences);

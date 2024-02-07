@@ -2,7 +2,7 @@
 const Learning_results = require("../models/Learning_results.js")
 const ApiStructure = require('../helpers/responseApi.js')
 const Competences = require('../models/Competence.js')
-
+var mongoose = require('mongoose')
 
 // Controlador para listar todos los resultados de aprendizaje asociados a una competencia por su ID
 exports.listLearningResults = async (req, res) => {
@@ -35,12 +35,18 @@ exports.resultById = async (req, res) => {
 
         // Buscar un resultado de aprendizaje por su ID
         const result = await Learning_results.findById(id_Result);
+        console.log(result)
+        apiStructure.setResult(result);
+        return res.json(apiStructure.toResponse());
+        // if (!result) {
+        //     console.log('ingresa  if ')
+        //     apiStructure.setResult(result);
+        //     return res.json(apiStructure.toResponse());
+        // } else {
+        //     apiStructure.setStatus(404, "Info", "No existe el Resultado de Aprendizaje con el ID proporcionado");         
+        //     return res.json(apiStructure.toResponse());
 
-        if (result) {
-            apiStructure.setResult(result);
-        } else {
-            apiStructure.setStatus(404, "Info", "No existe el Resultado de Aprendizaje con el ID proporcionado");
-        }
+        // }
     } catch (error) {
         
         apiStructure.setStatus(500, "Error", "Ocurrió un error al procesar la solicitud.");
@@ -54,21 +60,35 @@ exports.resultById = async (req, res) => {
 exports.createResults = async (req, res) => {
     const apiStructure = new ApiStructure();
     try {
-        const { learning_result, competence, _id } = req.body;
-
+        const {learning_result_code, learning_result, competence, _id } = req.body;
+        const newObjectId = new mongoose.Types.ObjectId();
         // Verificar si el código ya existe en la base de datos
+        const newObjectIdString = newObjectId.toString();
         const existingResult = await Learning_results.findOne({ _id });
+        
+        // Convertir learning_result a mayúsculas
+        const learningResultUpperCase = learning_result.toUpperCase();
 
-        if (existingResult) {
-            apiStructure.setStatus("Failed", 400, `El Código ya existe`);
-        } else {
-            // Crear un nuevo resultado de aprendizaje
-            const createdResult = await Learning_results.create({
-                _id, learning_result, competence
-            });
+        const createdResult = await Learning_results.create({
+            _id: newObjectIdString,
+            learning_result_code,
+            learning_result: learningResultUpperCase,
+            competence
+        });
+        console.log('nuevo objeto creado')
+        console.log(createdResult)
 
-            apiStructure.setResult(createdResult, "Resultado de aprendizaje creado exitosamente");
-        }
+        apiStructure.setResult(createdResult, "Resultado de aprendizaje creado exitosamente");
+        // if (existingResult) {
+        //     apiStructure.setStatus("Failed", 400, `El Código ya existe`);
+        // } else {
+        //     // Crear un nuevo resultado de aprendizaje
+        //     const createdResult = await Learning_results.create({
+        //         _id, learning_result, competence
+        //     });
+
+        //     apiStructure.setResult(createdResult, "Resultado de aprendizaje creado exitosamente");
+        // }
     } catch (error) {
         apiStructure.setStatus(500, "Error ", "Se ha producido un error al registrar el Resultado de aprendizaje. Por favor, inténtelo nuevamente más tarde.");
     }
@@ -93,11 +113,13 @@ exports.updateResults = async (req, res) => {
 
         // Actualizar los datos del resultado de aprendizaje
         const updatedResult = await Learning_results.findByIdAndUpdate(code, {
+            learning_result_code:reqResult.learning_result_code,
             learning_result: reqResult.learning_result,
             competence: reqResult.competence
         }, { new: true });
 
-        apiStructure.setResult(updatedResult, "Resultado de Aprendizaje Actualizado con Éxito");
+        apiStructure.setResult(updatedResult, "Resultado de Aprendizaje Actualizado con Éxito")
+        return res.json(apiStructure.toResponse());;
     } catch (error) {
         apiStructure.setStatus(500, "Error ", "Ocurrió un error al procesar la solicitud. Por favor, inténtelo de nuevo más tarde.");
     }

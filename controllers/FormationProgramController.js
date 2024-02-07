@@ -7,7 +7,7 @@ var Programs_level=require("../models/Program_levels.js")
 var mongoose = require('mongoose')
 exports.allFormationPrograms = async (req, res) => {
     try {
-        const formationPrograms = await Formation_programs.find({}, '_id program_name program_code total_duration program_version competence program_level thematic_line');
+        const formationPrograms = await Formation_programs.find({}, '_id program_name program_code total_duration program_version competence program_level thematic_line').populate('program_level').populate('thematic_line');
         // Puedes ajustar la proyección para incluir/excluir campos según tus necesidades
 
         if (formationPrograms.length > 0) {
@@ -160,17 +160,23 @@ exports.createFormstionPrograms = async (req, res) => {
         //     return res.json(apiStructure.toResponse());
         // }
 
-        const existingProgramLevel = await Programs_level.findOne({ _id: program_level });
+        const existingProgramLevel = await Programs_level.findOne({
+          _id: program_level,
+        });
 
         if (!existingProgramLevel) {
-            apiStructure.setStatus(400, "Info", "El nivel del programa no existe");
-            return res.json(apiStructure.toResponse());
+          apiStructure.setStatus(
+            400,
+            "Info",
+            "El nivel del programa no existe"
+          );
+          return res.json(apiStructure.toResponse());
         }
         // Crea un nuevo ObjectId
-const newObjectId = new  mongoose.Types.ObjectId();
+        const newObjectId = new mongoose.Types.ObjectId();
 
-// Convierte el ObjectId a string
-const newObjectIdString = newObjectId.toString();
+        // Convierte el ObjectId a string
+        const newObjectIdString = newObjectId.toString();
 
         const newFormationProgram = await Formation_programs.create({
             _id: newObjectIdString,
