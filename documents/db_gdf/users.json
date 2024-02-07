@@ -1,0 +1,735 @@
+[{
+  "_id": {
+    "$oid": "64ca7297c2723fa6932ab335"
+  },
+  "complete_names": "Pepe Perez",
+  "email": "pepe05@gmail.com",
+  "password": "$2a$10$nZmdQQWOZJWxd1v6ajbTGutRElUx6nbaT8PM.CSsThEZ.tL9gpejC",
+  "type_profile": [
+    {
+      "$oid": "6446c88e028bad6c50fad7fc"
+    }
+  ],
+  "formation_program": [],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-08-02T15:13:27.173Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-02T15:13:56.747Z"
+  }
+},{
+  "_id": {
+    "$oid": "64edffc7362abe29ddea84b9"
+  },
+  "complete_names": "alexa1234",
+  "email": "alexa@gmail.com",
+  "password": "$2a$10$6E1LSrInWlqCyN.piTd/a.SZo9TF0ODPtoB00/9Cid/kt7QG9XAOW",
+  "type_profile": [
+    {
+      "$oid": "6446c88e028bad6c50fad7fc"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-08-29T14:25:11.528Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-29T15:05:18.670Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ee15cd3c8e0a2126767031"
+  },
+  "complete_names": "alexa3",
+  "email": "test@test33.com",
+  "password": "$2a$10$bzJvVY436LLhB1i7C8Aoiu7hTzO1ST4tCyuw25wrc0K5Ij1TfOsj.",
+  "type_profile": [
+    {
+      "$oid": "6446c898028bad6c50fad7fe"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-08-29T15:59:09.094Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-29T15:59:09.094Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ee21323c8e0a2126767167"
+  },
+  "complete_names": "Instructor",
+  "email": "test1@test33.com",
+  "password": "$2a$10$Vuyut72AtJp0gVvnN4IdKOZvfo0dV9LNSCFbJmLVLULlXMu2NK0VO",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-08-29T16:47:46.360Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-29T16:47:46.360Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f88afb5ccf47c31a201d50"
+  },
+  "complete_names": "Instructor1",
+  "email": "test12@test33.com",
+  "password": "$2a$10$dnA3wISMVV7pn5XCzoSI1u5NK9nb3qNXpxPy1bB0VK.zry.66ziJi",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T14:21:47.407Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T14:21:47.407Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f88feb1fa5ed2ec9a21a27"
+  },
+  "complete_names": "Instructor1",
+  "email": "test122@test33.com",
+  "password": "$2a$10$0B6lgT8ItOS/LzpdwFWPleTb7bJW0rbmN5UKsAeVzGGDrWqEjlfO6",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T14:42:51.154Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T14:42:51.154Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f890f7d24fd0e08d0191bf"
+  },
+  "complete_names": "Instructor1",
+  "email": "test1342@test33.com",
+  "password": "$2a$10$bpmDruZBVHj75uHBSFZPueINc9klhClw/PBT7gOAFDC/FrCF7uyWu",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T14:47:19.852Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T14:47:19.852Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f89fb4869d079021428dd2"
+  },
+  "complete_names": "Instructor1",
+  "email": "test1122@test33.com",
+  "password": "$2a$10$E4tqblx6IuVcrlURMdgk7.7CbSVjMQ9uAgbJSyiHeNo/AHnjj05gq",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T15:50:12.541Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T15:50:12.541Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8a1a92ca7716e7d296d0f"
+  },
+  "complete_names": "Instructor1",
+  "email": "test342@test33.com",
+  "password": "$2a$10$FWT5HK1t01x1eHZmLtzRE.Jo0ony8G6IGtPULy8HM9qHA7oj6cRxS",
+  "type_profile": null,
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T15:58:33.845Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T15:58:33.845Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8b56d1f4c1a14649f0dc0"
+  },
+  "complete_names": "Instructor1",
+  "email": "test01@test33.com",
+  "password": "$2a$10$4ArnJiaTEpk4scmBWyeKHe.nsIME7EYZWHHOqO2SWOSE1yTtgTkqG",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:22:53.910Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:22:53.910Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8b609f9f0b465ab41653f"
+  },
+  "complete_names": "Instructor1",
+  "email": "test013@test33.com",
+  "password": "$2a$10$htpXpzexOmPaYa7C0ZSVu.yZ/tc1O01DWRKWEeLanJ4m9W4MTivz.",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:25:29.237Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:25:29.237Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8b617f9f0b465ab416544"
+  },
+  "complete_names": "Instructor1",
+  "email": "test013@test332.com",
+  "password": "$2a$10$qdDkixencLpoq0BXrUs.5uzkm9QXstUkWskKI.qMhLx7A8fGZfSdC",
+  "type_profile": null,
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:25:43.234Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:25:43.234Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8b6810ed0db806cb38afe"
+  },
+  "complete_names": "Instructor1",
+  "email": "test0313@test332.com",
+  "password": "$2a$10$gNA4vtvuQ.ftXniMjlTiNexkjrBZhv0o30/fi/f9rxALEdsjxuwhy",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:27:29.034Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:27:29.034Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8b819654ccaaaa719d0c3"
+  },
+  "complete_names": "Instructor",
+  "email": "test031344@test332.com",
+  "password": "$2a$10$KONvQJ7UPgz6k67nXFEdwOkthwS00.Wjzl7rWTxNn2GdqIotFll7i",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:34:17.161Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:34:17.161Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8bc0dba7c2937c907e37f"
+  },
+  "complete_names": "Instructor",
+  "email": "test034@test332.com",
+  "password": "$2a$10$GZwGj4DKJ8RvhGGGR7bVeOU6ecmCy2jIC/wLha.ewuMW6a0tful.K",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:51:09.289Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:51:09.289Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8bcf26a88b1285eaacac8"
+  },
+  "complete_names": "Instructor",
+  "email": "test0134@test332.com",
+  "password": "$2a$10$LqpvOmzelBykVdlqfA7Zf.NO7ckpLEpCx/PthjOnTxpKjZ6svc7ju",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:54:58.234Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:54:58.234Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8bcf96a88b1285eaacacc"
+  },
+  "complete_names": "Instructor",
+  "email": "test01342@test332.com",
+  "password": "$2a$10$SCoCeiWj.duG4sLrfN4XzuZm0PrffPHOkI/oMl/e3lHW1H/v53GtK",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:55:05.371Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:55:05.371Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8bcfb6a88b1285eaacad0"
+  },
+  "complete_names": "Instructor",
+  "email": "test01342@test332.com",
+  "password": "$2a$10$.krwB3snQGPChKpKIcCS7eg6tDfZkMn/onrOn1yp7JD6VNvW1x3EW",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:55:07.205Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:55:07.205Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8bdaafcc52f0dfae77c55"
+  },
+  "complete_names": "Instructor",
+  "email": "test01342@test332.com",
+  "password": "$2a$10$RIZtTTSdAarYOA9td5mxWOt1HlV3teQOo2EUAoFurc2mKx0H.AlTy",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:58:02.164Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:58:02.164Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8be041de4251b8e3a8fcf"
+  },
+  "complete_names": "Instructor",
+  "email": "test01342@test332.com",
+  "password": "$2a$10$/ubhf6tjUWDFSkQe3/wWoOBUC60QU2BQ0PKAjUU3dEqRuCGZxe.Xy",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T17:59:32.349Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T17:59:32.349Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8bea8b8598c69fb01a8af"
+  },
+  "complete_names": "Instructor",
+  "email": "test01342@test332.com",
+  "password": "$2a$10$I5FgMaZGkboCwW2nnwcqcOLLwAoi/ppwlxsionL/Hm1vBDfAwSN3C",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T18:02:16.354Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T18:02:16.354Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8beb3323b80745830b1de"
+  },
+  "complete_names": "Instructor",
+  "email": "test01342@test332.com",
+  "password": "$2a$10$gmRGtC6RcGejwt5WEweu1uJ98TAW8cHDI0wmZ6z6Z5ZJvS2NrcY4u",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T18:02:27.980Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T18:02:27.980Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8bf0fa03e6b6502cb8f26"
+  },
+  "complete_names": "Instructor",
+  "email": "test01342@test332.com",
+  "password": "$2a$10$0Ph5YzidM9getlRic/u4Y.pW.CF9I7aeDqlJP8oaZeWxrjrGB314a",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T18:03:59.870Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T18:03:59.870Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8bf13a03e6b6502cb8f2a"
+  },
+  "complete_names": "Instructor",
+  "email": "test01342@test332.com",
+  "password": "$2a$10$E7hAp.fItsofIPU31Rw4GOC4gpyV.upXeWOu6rGAzdlJE6LlKBH0K",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T18:04:03.320Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T18:04:03.320Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8bf14a03e6b6502cb8f2e"
+  },
+  "complete_names": "Instructor",
+  "email": "test01342@test332.com",
+  "password": "$2a$10$2IXF.u895ckaPPIwDwSdJuMrQOzrMtrziIIyJdA4rvjJa8T9nJ5ji",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T18:04:04.485Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T18:04:04.485Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8bf2405a4e6d76aea20cc"
+  },
+  "complete_names": "Instructor",
+  "email": "test01342@test332.com",
+  "password": "$2a$10$QH8GDuSGiIUxIoxSTRikYe771iRdcH9UsdfeGt8uhzvyokG2woJSS",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T18:04:20.162Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T18:04:20.162Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f8cc8d64bac3e5bc36f1c3"
+  },
+  "complete_names": "Instructor",
+  "email": "tes8t034@test332.com",
+  "password": "$2a$10$74g1dTZc06BLPXkLiTHTse7h//dG3Fl.KlEGkIuME4nVFd/iZ78eW",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-06T19:01:33.116Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T19:01:33.116Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f9dc69866a6595f11121ce"
+  },
+  "complete_names": "Instructor1",
+  "email": "2test1@test33.com",
+  "password": "$2a$10$7JF2dfcLPQ3H3FdN8emCIueJi1w/NUfldB9pjXDcpI68R7z2/r.3e",
+  "type_profile": [
+    {
+      "$oid": "6419e06c6ba47620307a98c3"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-07T14:21:29.361Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-07T14:21:29.361Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f9e3497089ffa07ff41507"
+  },
+  "complete_names": "Instructor1",
+  "email": "22test1@test33.com",
+  "password": "$2a$10$frn82EZlNguLRt3I30ckkOJYg33qbRVS9sah9tfCNLBdLgrQZTA8O",
+  "type_profile": [
+    {
+      "$oid": "6446c898028bad6c50fad7fe"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-07T14:50:49.987Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-07T14:50:49.987Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f9e3cb7089ffa07ff41533"
+  },
+  "complete_names": "jessica",
+  "email": "admin@test33.com",
+  "password": "$2a$10$e1pSe3r/kT2QHIY30c.GKeVM/k/Z/RlLVAFJCDYqSf1JOqmMu6DqG",
+  "type_profile": [
+    {
+      "$oid": "6446c898028bad6c50fad7fe"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-07T14:52:59.067Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-07T14:52:59.067Z"
+  }
+},{
+  "_id": {
+    "$oid": "64fb354dedfbf61c418ee7a1"
+  },
+  "complete_names": "Instructor1",
+  "email": "test199@test.com",
+  "password": "$2a$10$75Z/17UH4h3N.5KclrEQnuyNDWAyqZu6UM8sL.dnXL/r0oTdPlbxG",
+  "type_profile": [
+    {
+      "$oid": "6446c898028bad6c50fad7fe"
+    }
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "training_center": [
+    "9101"
+  ],
+  "createdAt": {
+    "$date": "2023-09-08T14:53:01.411Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-08T14:53:01.411Z"
+  }
+}]

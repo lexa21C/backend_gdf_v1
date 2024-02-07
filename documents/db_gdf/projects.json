@@ -1,0 +1,1068 @@
+[{
+  "_id": {
+    "$oid": "64ad9ebb91e0e98b666ea5e7"
+  },
+  "name": "PATOJITO MARKET",
+  "state": "En proceso",
+  "problem_statement": "onClick={(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "project_justification": "onClick={(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "general_objective": "onClick={(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "specific_objectives": [
+    "d",
+    "dd",
+    "d"
+  ],
+  "scope_feasibility": "onClick={(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "project_summary": "onClick={(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "technological_research": "onClick={(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "glossary": [
+    "d",
+    "d",
+    "d"
+  ],
+  "date_presentation": "2023-06-26",
+  "approval_date": "2023-09-26",
+  "category": [
+    {
+      "$oid": "643da84cabe591095576a05b"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64ac4b5bfff9a3fbbafb5e84"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-11T18:26:03.837Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-11T18:26:03.837Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ad9f0f91e0e98b666ea606"
+  },
+  "name": "aaa",
+  "state": "Terminado",
+  "problem_statement": "{(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "project_justification": "{(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "general_objective": "{(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "specific_objectives": [
+    "g",
+    "g",
+    "g"
+  ],
+  "scope_feasibility": "{(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "project_summary": "{(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "technological_research": "{(e) => {\n    e.preventDefault();\n    if (!isValidForm) {\n      // Si hay algún error de validación, no avances al siguiente paso\n      return;\n    }",
+  "glossary": [
+    "g",
+    "g",
+    "g"
+  ],
+  "date_presentation": "2023-05-29",
+  "approval_date": "2023-09-18",
+  "category": [
+    {
+      "$oid": "643da84cabe591095576a05b"
+    },
+    {
+      "$oid": "642d775085bb5a61d63c53be"
+    },
+    {
+      "$oid": "643da852abe591095576a05d"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64ac4b5bfff9a3fbbafb5e84"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-11T18:27:27.151Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-11T18:27:27.151Z"
+  }
+},{
+  "_id": {
+    "$oid": "64adaca691e0e98b666ea644"
+  },
+  "name": "PATOJITO MARKET www",
+  "state": "En proceso",
+  "problem_statement": "import React, { useEffect, useState } from 'react';\nimport axios from 'axios';\nimport {\n  BarChart,\n  Bar,\n  XAxis,\n  YAxis,\n  CartesianGrid,\n  Tooltip,\n  Legend,\n  LabelList,\n  ResponsiveContainer,\n} from 'recharts';\n\nconst Example2 = () => {\n  const [data, setData] = useState([]);\n\n  useEffect(() => {\n    // Realizar la solicitud a la API utilizando axios\n    axios\n      .get('/api/v1/graphsProjectFp')\n      .then((response) => {\n        // Verificar si la respuesta es válida y contiene datos en formato JSON\n        if (response.status === 200 && response.data && response.data.results) {\n          const apiData = response.data.results;\n          // Mapear los resultados de la API a un formato adecuado para la gráfica\n          const chartData = apiData.map((result) => ({\n            name: result.programName,\n            'Terminado': result.completedCount,\n            'En proceso': result.inProcessCount,\n          }));\n          setData(chartData);\n        } else {\n          console.error('Respuesta inválida de la API');\n        }\n      })\n      .catch((error) => {\n        console.error('Error al obtener los datos de la API:', error);\n      });\n  }, []);\n\n  const getColor = (value) => {\n    if (value === 'En proceso') {\n      return '#8884d8'; // Color para barras \"En proceso\"\n    } else if (value === 'Terminado') {\n      return '#82ca9d'; // Color para barras \"Terminado\"\n    }\n    return '#f5365c'; // Color predeterminado para otras barras\n  };\n\n  const renderCustomizedLabel = (props) => {\n    const { x, y, width, value, fill } = props;\n    const radius = Math.min(width / 2, 20); // Ajustar el tamaño del círculo en función del ancho de la barra\n    const fontSize = Math.min(radius * 0.8, 16); // Ajustar el tamaño de la fuente en función del tamaño del círculo\n\n    return (\n      <g>\n        <circle cx={x + width / 2} cy={y - radius} r={radius} fill={fill} stroke={fill} />\n        <text\n          x={x + width / 2}\n          y={y - radius}\n          fill=\"#fff\"\n          textAnchor=\"middle\"\n          dominantBaseline=\"middle\"\n          style={{ fontSize: `${fontSize}px` }} // Aplicar el tamaño de la fuente al número\n        >\n          {value}\n        </text>\n      </g>\n    );\n  };\n\n  return (\n    <ResponsiveContainer width=\"97%\" height={355}>\n      <BarChart\n        data={data}\n        margin={{\n          top: 1,\n          right: 30,\n          left: 20,\n          bottom: 5,\n        }}\n      >\n        <CartesianGrid strokeDasharray=\"3 3\" />\n        <XAxis dataKey=\"name\" />\n        <YAxis />\n        <Tooltip />\n        <Legend />\n        <Bar dataKey=\"Terminado\" fill=\"#f5365c\" barSize={20}>\n          <LabelList\n            dataKey=\"Terminado\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n        <Bar dataKey=\"En proceso\" fill=\"#ffce40\" barSize={20}>\n          <LabelList\n            dataKey=\"En proceso\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n      </BarChart>\n    </ResponsiveContainer>\n  );\n};\n\nexport default Example2;",
+  "project_justification": "import React, { useEffect, useState } from 'react';\nimport axios from 'axios';\nimport {\n  BarChart,\n  Bar,\n  XAxis,\n  YAxis,\n  CartesianGrid,\n  Tooltip,\n  Legend,\n  LabelList,\n  ResponsiveContainer,\n} from 'recharts';\n\nconst Example2 = () => {\n  const [data, setData] = useState([]);\n\n  useEffect(() => {\n    // Realizar la solicitud a la API utilizando axios\n    axios\n      .get('/api/v1/graphsProjectFp')\n      .then((response) => {\n        // Verificar si la respuesta es válida y contiene datos en formato JSON\n        if (response.status === 200 && response.data && response.data.results) {\n          const apiData = response.data.results;\n          // Mapear los resultados de la API a un formato adecuado para la gráfica\n          const chartData = apiData.map((result) => ({\n            name: result.programName,\n            'Terminado': result.completedCount,\n            'En proceso': result.inProcessCount,\n          }));\n          setData(chartData);\n        } else {\n          console.error('Respuesta inválida de la API');\n        }\n      })\n      .catch((error) => {\n        console.error('Error al obtener los datos de la API:', error);\n      });\n  }, []);\n\n  const getColor = (value) => {\n    if (value === 'En proceso') {\n      return '#8884d8'; // Color para barras \"En proceso\"\n    } else if (value === 'Terminado') {\n      return '#82ca9d'; // Color para barras \"Terminado\"\n    }\n    return '#f5365c'; // Color predeterminado para otras barras\n  };\n\n  const renderCustomizedLabel = (props) => {\n    const { x, y, width, value, fill } = props;\n    const radius = Math.min(width / 2, 20); // Ajustar el tamaño del círculo en función del ancho de la barra\n    const fontSize = Math.min(radius * 0.8, 16); // Ajustar el tamaño de la fuente en función del tamaño del círculo\n\n    return (\n      <g>\n        <circle cx={x + width / 2} cy={y - radius} r={radius} fill={fill} stroke={fill} />\n        <text\n          x={x + width / 2}\n          y={y - radius}\n          fill=\"#fff\"\n          textAnchor=\"middle\"\n          dominantBaseline=\"middle\"\n          style={{ fontSize: `${fontSize}px` }} // Aplicar el tamaño de la fuente al número\n        >\n          {value}\n        </text>\n      </g>\n    );\n  };\n\n  return (\n    <ResponsiveContainer width=\"97%\" height={355}>\n      <BarChart\n        data={data}\n        margin={{\n          top: 1,\n          right: 30,\n          left: 20,\n          bottom: 5,\n        }}\n      >\n        <CartesianGrid strokeDasharray=\"3 3\" />\n        <XAxis dataKey=\"name\" />\n        <YAxis />\n        <Tooltip />\n        <Legend />\n        <Bar dataKey=\"Terminado\" fill=\"#f5365c\" barSize={20}>\n          <LabelList\n            dataKey=\"Terminado\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n        <Bar dataKey=\"En proceso\" fill=\"#ffce40\" barSize={20}>\n          <LabelList\n            dataKey=\"En proceso\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n      </BarChart>\n    </ResponsiveContainer>\n  );\n};\n\nexport default Example2;",
+  "general_objective": "import React, { useEffect, useState } from 'react';\nimport axios from 'axios';\nimport {\n  BarChart,\n  Bar,\n  XAxis,\n  YAxis,\n  CartesianGrid,\n  Tooltip,\n  Legend,\n  LabelList,\n  ResponsiveContainer,\n} from 'recharts';\n\nconst Example2 = () => {\n  const [data, setData] = useState([]);\n\n  useEffect(() => {\n    // Realizar la solicitud a la API utilizando axios\n    axios\n      .get('/api/v1/graphsProjectFp')\n      .then((response) => {\n        // Verificar si la respuesta es válida y contiene datos en formato JSON\n        if (response.status === 200 && response.data && response.data.results) {\n          const apiData = response.data.results;\n          // Mapear los resultados de la API a un formato adecuado para la gráfica\n          const chartData = apiData.map((result) => ({\n            name: result.programName,\n            'Terminado': result.completedCount,\n            'En proceso': result.inProcessCount,\n          }));\n          setData(chartData);\n        } else {\n          console.error('Respuesta inválida de la API');\n        }\n      })\n      .catch((error) => {\n        console.error('Error al obtener los datos de la API:', error);\n      });\n  }, []);\n\n  const getColor = (value) => {\n    if (value === 'En proceso') {\n      return '#8884d8'; // Color para barras \"En proceso\"\n    } else if (value === 'Terminado') {\n      return '#82ca9d'; // Color para barras \"Terminado\"\n    }\n    return '#f5365c'; // Color predeterminado para otras barras\n  };\n\n  const renderCustomizedLabel = (props) => {\n    const { x, y, width, value, fill } = props;\n    const radius = Math.min(width / 2, 20); // Ajustar el tamaño del círculo en función del ancho de la barra\n    const fontSize = Math.min(radius * 0.8, 16); // Ajustar el tamaño de la fuente en función del tamaño del círculo\n\n    return (\n      <g>\n        <circle cx={x + width / 2} cy={y - radius} r={radius} fill={fill} stroke={fill} />\n        <text\n          x={x + width / 2}\n          y={y - radius}\n          fill=\"#fff\"\n          textAnchor=\"middle\"\n          dominantBaseline=\"middle\"\n          style={{ fontSize: `${fontSize}px` }} // Aplicar el tamaño de la fuente al número\n        >\n          {value}\n        </text>\n      </g>\n    );\n  };\n\n  return (\n    <ResponsiveContainer width=\"97%\" height={355}>\n      <BarChart\n        data={data}\n        margin={{\n          top: 1,\n          right: 30,\n          left: 20,\n          bottom: 5,\n        }}\n      >\n        <CartesianGrid strokeDasharray=\"3 3\" />\n        <XAxis dataKey=\"name\" />\n        <YAxis />\n        <Tooltip />\n        <Legend />\n        <Bar dataKey=\"Terminado\" fill=\"#f5365c\" barSize={20}>\n          <LabelList\n            dataKey=\"Terminado\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n        <Bar dataKey=\"En proceso\" fill=\"#ffce40\" barSize={20}>\n          <LabelList\n            dataKey=\"En proceso\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n      </BarChart>\n    </ResponsiveContainer>\n  );\n};\n\nexport default Example2;",
+  "specific_objectives": [
+    "f",
+    "f",
+    "f"
+  ],
+  "scope_feasibility": "import React, { useEffect, useState } from 'react';\nimport axios from 'axios';\nimport {\n  BarChart,\n  Bar,\n  XAxis,\n  YAxis,\n  CartesianGrid,\n  Tooltip,\n  Legend,\n  LabelList,\n  ResponsiveContainer,\n} from 'recharts';\n\nconst Example2 = () => {\n  const [data, setData] = useState([]);\n\n  useEffect(() => {\n    // Realizar la solicitud a la API utilizando axios\n    axios\n      .get('/api/v1/graphsProjectFp')\n      .then((response) => {\n        // Verificar si la respuesta es válida y contiene datos en formato JSON\n        if (response.status === 200 && response.data && response.data.results) {\n          const apiData = response.data.results;\n          // Mapear los resultados de la API a un formato adecuado para la gráfica\n          const chartData = apiData.map((result) => ({\n            name: result.programName,\n            'Terminado': result.completedCount,\n            'En proceso': result.inProcessCount,\n          }));\n          setData(chartData);\n        } else {\n          console.error('Respuesta inválida de la API');\n        }\n      })\n      .catch((error) => {\n        console.error('Error al obtener los datos de la API:', error);\n      });\n  }, []);\n\n  const getColor = (value) => {\n    if (value === 'En proceso') {\n      return '#8884d8'; // Color para barras \"En proceso\"\n    } else if (value === 'Terminado') {\n      return '#82ca9d'; // Color para barras \"Terminado\"\n    }\n    return '#f5365c'; // Color predeterminado para otras barras\n  };\n\n  const renderCustomizedLabel = (props) => {\n    const { x, y, width, value, fill } = props;\n    const radius = Math.min(width / 2, 20); // Ajustar el tamaño del círculo en función del ancho de la barra\n    const fontSize = Math.min(radius * 0.8, 16); // Ajustar el tamaño de la fuente en función del tamaño del círculo\n\n    return (\n      <g>\n        <circle cx={x + width / 2} cy={y - radius} r={radius} fill={fill} stroke={fill} />\n        <text\n          x={x + width / 2}\n          y={y - radius}\n          fill=\"#fff\"\n          textAnchor=\"middle\"\n          dominantBaseline=\"middle\"\n          style={{ fontSize: `${fontSize}px` }} // Aplicar el tamaño de la fuente al número\n        >\n          {value}\n        </text>\n      </g>\n    );\n  };\n\n  return (\n    <ResponsiveContainer width=\"97%\" height={355}>\n      <BarChart\n        data={data}\n        margin={{\n          top: 1,\n          right: 30,\n          left: 20,\n          bottom: 5,\n        }}\n      >\n        <CartesianGrid strokeDasharray=\"3 3\" />\n        <XAxis dataKey=\"name\" />\n        <YAxis />\n        <Tooltip />\n        <Legend />\n        <Bar dataKey=\"Terminado\" fill=\"#f5365c\" barSize={20}>\n          <LabelList\n            dataKey=\"Terminado\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n        <Bar dataKey=\"En proceso\" fill=\"#ffce40\" barSize={20}>\n          <LabelList\n            dataKey=\"En proceso\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n      </BarChart>\n    </ResponsiveContainer>\n  );\n};\n\nexport default Example2;",
+  "project_summary": "vimport React, { useEffect, useState } from 'react';\nimport axios from 'axios';\nimport {\n  BarChart,\n  Bar,\n  XAxis,\n  YAxis,\n  CartesianGrid,\n  Tooltip,\n  Legend,\n  LabelList,\n  ResponsiveContainer,\n} from 'recharts';\n\nconst Example2 = () => {\n  const [data, setData] = useState([]);\n\n  useEffect(() => {\n    // Realizar la solicitud a la API utilizando axios\n    axios\n      .get('/api/v1/graphsProjectFp')\n      .then((response) => {\n        // Verificar si la respuesta es válida y contiene datos en formato JSON\n        if (response.status === 200 && response.data && response.data.results) {\n          const apiData = response.data.results;\n          // Mapear los resultados de la API a un formato adecuado para la gráfica\n          const chartData = apiData.map((result) => ({\n            name: result.programName,\n            'Terminado': result.completedCount,\n            'En proceso': result.inProcessCount,\n          }));\n          setData(chartData);\n        } else {\n          console.error('Respuesta inválida de la API');\n        }\n      })\n      .catch((error) => {\n        console.error('Error al obtener los datos de la API:', error);\n      });\n  }, []);\n\n  const getColor = (value) => {\n    if (value === 'En proceso') {\n      return '#8884d8'; // Color para barras \"En proceso\"\n    } else if (value === 'Terminado') {\n      return '#82ca9d'; // Color para barras \"Terminado\"\n    }\n    return '#f5365c'; // Color predeterminado para otras barras\n  };\n\n  const renderCustomizedLabel = (props) => {\n    const { x, y, width, value, fill } = props;\n    const radius = Math.min(width / 2, 20); // Ajustar el tamaño del círculo en función del ancho de la barra\n    const fontSize = Math.min(radius * 0.8, 16); // Ajustar el tamaño de la fuente en función del tamaño del círculo\n\n    return (\n      <g>\n        <circle cx={x + width / 2} cy={y - radius} r={radius} fill={fill} stroke={fill} />\n        <text\n          x={x + width / 2}\n          y={y - radius}\n          fill=\"#fff\"\n          textAnchor=\"middle\"\n          dominantBaseline=\"middle\"\n          style={{ fontSize: `${fontSize}px` }} // Aplicar el tamaño de la fuente al número\n        >\n          {value}\n        </text>\n      </g>\n    );\n  };\n\n  return (\n    <ResponsiveContainer width=\"97%\" height={355}>\n      <BarChart\n        data={data}\n        margin={{\n          top: 1,\n          right: 30,\n          left: 20,\n          bottom: 5,\n        }}\n      >\n        <CartesianGrid strokeDasharray=\"3 3\" />\n        <XAxis dataKey=\"name\" />\n        <YAxis />\n        <Tooltip />\n        <Legend />\n        <Bar dataKey=\"Terminado\" fill=\"#f5365c\" barSize={20}>\n          <LabelList\n            dataKey=\"Terminado\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n        <Bar dataKey=\"En proceso\" fill=\"#ffce40\" barSize={20}>\n          <LabelList\n            dataKey=\"En proceso\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n      </BarChart>\n    </ResponsiveContainer>\n  );\n};\n\nexport default Example2;",
+  "technological_research": "import React, { useEffect, useState } from 'react';\nimport axios from 'axios';\nimport {\n  BarChart,\n  Bar,\n  XAxis,\n  YAxis,\n  CartesianGrid,\n  Tooltip,\n  Legend,\n  LabelList,\n  ResponsiveContainer,\n} from 'recharts';\n\nconst Example2 = () => {\n  const [data, setData] = useState([]);\n\n  useEffect(() => {\n    // Realizar la solicitud a la API utilizando axios\n    axios\n      .get('/api/v1/graphsProjectFp')\n      .then((response) => {\n        // Verificar si la respuesta es válida y contiene datos en formato JSON\n        if (response.status === 200 && response.data && response.data.results) {\n          const apiData = response.data.results;\n          // Mapear los resultados de la API a un formato adecuado para la gráfica\n          const chartData = apiData.map((result) => ({\n            name: result.programName,\n            'Terminado': result.completedCount,\n            'En proceso': result.inProcessCount,\n          }));\n          setData(chartData);\n        } else {\n          console.error('Respuesta inválida de la API');\n        }\n      })\n      .catch((error) => {\n        console.error('Error al obtener los datos de la API:', error);\n      });\n  }, []);\n\n  const getColor = (value) => {\n    if (value === 'En proceso') {\n      return '#8884d8'; // Color para barras \"En proceso\"\n    } else if (value === 'Terminado') {\n      return '#82ca9d'; // Color para barras \"Terminado\"\n    }\n    return '#f5365c'; // Color predeterminado para otras barras\n  };\n\n  const renderCustomizedLabel = (props) => {\n    const { x, y, width, value, fill } = props;\n    const radius = Math.min(width / 2, 20); // Ajustar el tamaño del círculo en función del ancho de la barra\n    const fontSize = Math.min(radius * 0.8, 16); // Ajustar el tamaño de la fuente en función del tamaño del círculo\n\n    return (\n      <g>\n        <circle cx={x + width / 2} cy={y - radius} r={radius} fill={fill} stroke={fill} />\n        <text\n          x={x + width / 2}\n          y={y - radius}\n          fill=\"#fff\"\n          textAnchor=\"middle\"\n          dominantBaseline=\"middle\"\n          style={{ fontSize: `${fontSize}px` }} // Aplicar el tamaño de la fuente al número\n        >\n          {value}\n        </text>\n      </g>\n    );\n  };\n\n  return (\n    <ResponsiveContainer width=\"97%\" height={355}>\n      <BarChart\n        data={data}\n        margin={{\n          top: 1,\n          right: 30,\n          left: 20,\n          bottom: 5,\n        }}\n      >\n        <CartesianGrid strokeDasharray=\"3 3\" />\n        <XAxis dataKey=\"name\" />\n        <YAxis />\n        <Tooltip />\n        <Legend />\n        <Bar dataKey=\"Terminado\" fill=\"#f5365c\" barSize={20}>\n          <LabelList\n            dataKey=\"Terminado\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n        <Bar dataKey=\"En proceso\" fill=\"#ffce40\" barSize={20}>\n          <LabelList\n            dataKey=\"En proceso\"\n            position=\"top\"\n            content={(props) =>\n              renderCustomizedLabel({ ...props, fill: getColor(props.value) })\n            }\n          />\n        </Bar>\n      </BarChart>\n    </ResponsiveContainer>\n  );\n};\n\nexport default Example2;",
+  "glossary": [
+    "f",
+    "f",
+    "ff"
+  ],
+  "date_presentation": "2023-05-01",
+  "approval_date": "2023-09-19",
+  "category": [
+    {
+      "$oid": "642d775085bb5a61d63c53be"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64ac4b5bfff9a3fbbafb5e84"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-11T19:25:26.584Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-11T19:25:26.584Z"
+  }
+},{
+  "_id": {
+    "$oid": "64aea93b8ad7c5a458109c18"
+  },
+  "name": "BEE APP 34",
+  "state": "En proceso",
+  "problem_statement": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "project_justification": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "general_objective": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "specific_objectives": [
+    "f",
+    "f",
+    "f"
+  ],
+  "scope_feasibility": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "project_summary": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "technological_research": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "glossary": [
+    "f",
+    "f",
+    "f"
+  ],
+  "date_presentation": "2023-05-01",
+  "approval_date": "2023-09-25",
+  "category": [
+    {
+      "$oid": "643da84cabe591095576a05b"
+    },
+    {
+      "$oid": "642d775085bb5a61d63c53be"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64aea90d8ad7c5a458109c0e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-12T13:23:07.300Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-12T13:23:07.300Z"
+  }
+},{
+  "_id": {
+    "$oid": "64aea9bc8ad7c5a458109c44"
+  },
+  "name": "PATOJITO MARKET 0",
+  "state": "Terminado",
+  "problem_statement": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "project_justification": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "general_objective": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "specific_objectives": [
+    "g",
+    "g",
+    "g"
+  ],
+  "scope_feasibility": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "project_summary": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "technological_research": "const data02 = [\n  { name: 'A1', value: 100 },\n  { name: 'A2', value: 300 },\n  { name: 'B1', value: 100 },\n  { name: 'B2', value: 80 },\n  { name: 'B3', value: 40 },\n  { name: 'B4', value: 30 },\n  { name: 'B5', value: 50 },\n  { name: 'C1', value: 100 },\n  { name: 'C2', value: 200 },\n  { name: 'D1', value: 150 },\n  { name: 'D2', value: 50 },\n];",
+  "glossary": [
+    "g",
+    "g",
+    "g"
+  ],
+  "date_presentation": "2023-05-01",
+  "approval_date": "2023-08-28",
+  "category": [
+    {
+      "$oid": "643da87aabe591095576a05f"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64aea9968ad7c5a458109c3a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-12T13:25:16.944Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-14T19:36:41.099Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b046b3574472c7dc07c8b0"
+  },
+  "name": "BIO ll 2c448",
+  "state": "terminado",
+  "problem_statement": "plateamiento del problema",
+  "project_justification": "justificacion",
+  "general_objective": "objetivo general",
+  "specific_objectives": [
+    "objetivo especifico",
+    "a"
+  ],
+  "scope_feasibility": "contribuye a definir los límites y evitar desviaciones que alejen de los resultados esperados",
+  "project_summary": "un resumen del proyecto",
+  "technological_research": "n ámbito de producción de conocimiento tecnológico validado, que incluye tanto el producto cognitivo, -teorías, técnicas, tecnologías, maquinarias, patentes, etc",
+  "glossary": [
+    "Catálogo alfabetizado de las palabras y expresiones de uno o varios textos que son difíciles de comprender, junto con su significado o algún comentario"
+  ],
+  "date_presentation": "2022-03-30T15:48:12.389+00:00",
+  "approval_date": "2022-12-30T15:48:12.389+00:00",
+  "category": [
+    {
+      "$oid": "6425adbc791af139f4cbedc1"
+    },
+    {
+      "$oid": "643da84cabe591095576a05b"
+    }
+  ],
+  "record": null,
+  "createdAt": {
+    "$date": "2023-07-13T18:47:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-13T18:47:15.396Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b14a3aa58914bdb147f1d6"
+  },
+  "name": "PATOJITO MARKET DFDF",
+  "state": "En proceso",
+  "problem_statement": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "project_justification": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "general_objective": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "specific_objectives": [
+    "D",
+    "D",
+    "D"
+  ],
+  "scope_feasibility": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "project_summary": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "technological_research": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "glossary": [
+    "f",
+    "f",
+    "f"
+  ],
+  "date_presentation": "2023-06-26",
+  "approval_date": "2023-08-23",
+  "category": [
+    {
+      "$oid": "643da852abe591095576a05d"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64aea9968ad7c5a458109c3a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-14T13:14:34.676Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-14T13:14:34.676Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b14a74a58914bdb147f1f4"
+  },
+  "name": "ambientes_areas_cualificacion 33",
+  "state": "Terminado",
+  "problem_statement": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "project_justification": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "general_objective": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "specific_objectives": [
+    "f",
+    "f",
+    "f"
+  ],
+  "scope_feasibility": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "project_summary": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "technological_research": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "glossary": [
+    "f",
+    "f",
+    "f"
+  ],
+  "date_presentation": "2023-06-25",
+  "approval_date": "2023-08-29",
+  "category": [
+    {
+      "$oid": "643da852abe591095576a05d"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64aea9968ad7c5a458109c3a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-14T13:15:32.449Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-14T18:14:48.741Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b14aa8a58914bdb147f213"
+  },
+  "name": "aaa 34",
+  "state": "En proceso",
+  "problem_statement": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "project_justification": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "general_objective": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "specific_objectives": [
+    "f",
+    "f",
+    "f"
+  ],
+  "scope_feasibility": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "project_summary": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "technological_research": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "glossary": [
+    "f",
+    "f",
+    "f"
+  ],
+  "date_presentation": "2023-05-29",
+  "approval_date": "2023-09-05",
+  "category": [
+    {
+      "$oid": "643da852abe591095576a05d"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64aea9968ad7c5a458109c3a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-14T13:16:24.807Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-14T13:16:24.807Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b14b1ba67811c5b46dc417"
+  },
+  "name": "BEE APP 445",
+  "state": "En proceso",
+  "problem_statement": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "project_justification": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "general_objective": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "specific_objectives": [
+    "f",
+    "f",
+    "f"
+  ],
+  "scope_feasibility": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "project_summary": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "technological_research": "<linearGradient id=\"colorPv\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"5%\" stopColor=\"#82ca9d\" stopOpacity={0.8}/>\n      <stop offset=\"95%\" stopColor=\"#82ca9d\" stopOpacity={0}/>\n    </linearGradient>",
+  "glossary": [
+    "f",
+    "f",
+    "f"
+  ],
+  "date_presentation": "2023-05-29",
+  "approval_date": "2023-09-18",
+  "category": [
+    {
+      "$oid": "643da852abe591095576a05d"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64aea9968ad7c5a458109c3a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-14T13:18:19.060Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-14T13:18:19.060Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b6d69b244faa975b7544f4"
+  },
+  "name": "ambientes_areas_cualificacion",
+  "state": "En proceso",
+  "problem_statement": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "project_justification": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "general_objective": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "specific_objectives": [
+    "c",
+    "c",
+    "c"
+  ],
+  "scope_feasibility": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "project_summary": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "technological_research": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "glossary": [
+    "c",
+    "c",
+    "c"
+  ],
+  "date_presentation": "2023-05-01",
+  "approval_date": "2023-09-25",
+  "category": [
+    {
+      "$oid": "64b1b3598b105840c75d11fa"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64b1a36792bbbb2e184413a5"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-18T18:14:51.058Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T18:14:51.058Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b6d6e2244faa975b754519"
+  },
+  "name": "PATOJITO MARKET 56",
+  "state": "Terminado",
+  "problem_statement": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "project_justification": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "general_objective": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "specific_objectives": [
+    "d",
+    "d",
+    "d"
+  ],
+  "scope_feasibility": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "project_summary": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "technological_research": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "glossary": [
+    "d",
+    "d",
+    "d"
+  ],
+  "date_presentation": "2023-06-26",
+  "approval_date": "2023-09-11",
+  "category": [
+    {
+      "$oid": "64b1b3638b105840c75d11fe"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64b1a36792bbbb2e184413a5"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-18T18:16:02.158Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T18:16:02.158Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b6f0d7f381f9f8aa56eec5"
+  },
+  "name": "PATOJITO",
+  "state": "Terminado",
+  "problem_statement": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "project_justification": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "general_objective": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "specific_objectives": [
+    "g",
+    "g",
+    "g"
+  ],
+  "scope_feasibility": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "project_summary": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "technological_research": "Si el icono está tomando un estilo ::before que no deseas, es posible que esté siendo generado automáticamente por alguna librería o framework que estés utilizando. Para evitar que se genere el estilo ::before, puedes intentar lo siguiente:",
+  "glossary": [
+    "g",
+    "g",
+    "g"
+  ],
+  "date_presentation": "2023-05-29",
+  "approval_date": "2023-08-28",
+  "category": [
+    {
+      "$oid": "64b1b3598b105840c75d11fa"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64b1a36792bbbb2e184413a5"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-18T20:06:47.647Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T20:06:47.647Z"
+  }
+},{
+  "_id": {
+    "$oid": "64bfdecdd9405e6c7e04977e"
+  },
+  "name": "PATOJIto",
+  "state": "En proceso",
+  "problem_statement": "1\n\nUsando el inicio de sesión de marketwatch.com como ejemplo, tendría que hacer que la propiedad css 'posición' sea \"absoluta\" para la etiqueta <i>. Esto le permitirá colocarlo dentro del cuadro de entrada. Tal vez algo como esto:\n\n.bi-eye-slash {",
+  "project_justification": "1\n\nUsando el inicio de sesión de marketwatch.com como ejemplo, tendría que hacer que la propiedad css 'posición' sea \"absoluta\" para la etiqueta <i>. Esto le permitirá colocarlo dentro del cuadro de entrada. Tal vez algo como esto:\n\n.bi-eye-slash {",
+  "general_objective": "1\n\nUsando el inicio de sesión de marketwatch.com como ejemplo, tendría que hacer que la propiedad css 'posición' sea \"absoluta\" para la etiqueta <i>. Esto le permitirá colocarlo dentro del cuadro de entrada. Tal vez algo como esto:\n\n.bi-eye-slash {",
+  "specific_objectives": [
+    "f",
+    "f",
+    "f"
+  ],
+  "scope_feasibility": "1\n\nUsando el inicio de sesión de marketwatch.com como ejemplo, tendría que hacer que la propiedad css 'posición' sea \"absoluta\" para la etiqueta <i>. Esto le permitirá colocarlo dentro del cuadro de entrada. Tal vez algo como esto:\n\n.bi-eye-slash {",
+  "project_summary": "1\n\nUsando el inicio de sesión de marketwatch.com como ejemplo, tendría que hacer que la propiedad css 'posición' sea \"absoluta\" para la etiqueta <i>. Esto le permitirá colocarlo dentro del cuadro de entrada. Tal vez algo como esto:\n\n.bi-eye-slash {",
+  "technological_research": "1\n\nUsando el inicio de sesión de marketwatch.com como ejemplo, tendría que hacer que la propiedad css 'posición' sea \"absoluta\" para la etiqueta <i>. Esto le permitirá colocarlo dentro del cuadro de entrada. Tal vez algo como esto:\n\n.bi-eye-slash {",
+  "glossary": [
+    "f",
+    "f",
+    "f"
+  ],
+  "date_presentation": "2023-05-01",
+  "approval_date": "2023-09-10",
+  "category": [
+    {
+      "$oid": "64bfd337c959eeb5e9431f7a"
+    },
+    {
+      "$oid": "64b1b3638b105840c75d11fe"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64b1a36792bbbb2e184413a5"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-25T14:40:13.567Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-25T14:40:13.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "64c178800de4aef3f8b2c766"
+  },
+  "name": "aaa 33",
+  "state": "En proceso",
+  "problem_statement": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_justification": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "general_objective": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "specific_objectives": [
+    "g",
+    "g",
+    "g"
+  ],
+  "scope_feasibility": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_summary": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "technological_research": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "glossary": [
+    "g",
+    "g",
+    "g"
+  ],
+  "date_presentation": "2023-05-29",
+  "approval_date": "2023-08-28",
+  "category": [
+    {
+      "$oid": "64b1b3598b105840c75d11fa"
+    },
+    {
+      "$oid": "64bfe4d2d71cf4ad91dd69b5"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64c177fd0de4aef3f8b2c759"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-26T19:48:16.459Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-26T19:48:16.459Z"
+  }
+},{
+  "_id": {
+    "$oid": "64c178b80de4aef3f8b2c78d"
+  },
+  "name": "BEE APP 33",
+  "state": "En proceso",
+  "problem_statement": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_justification": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "general_objective": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "specific_objectives": [
+    "d",
+    "d",
+    "d"
+  ],
+  "scope_feasibility": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_summary": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "technological_research": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "glossary": [
+    "d",
+    "d",
+    "d"
+  ],
+  "date_presentation": "2023-05-01",
+  "approval_date": "2023-09-11",
+  "category": [
+    {
+      "$oid": "64bfd337c959eeb5e9431f7a"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64c177fd0de4aef3f8b2c759"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-26T19:49:12.980Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-26T19:49:12.980Z"
+  }
+},{
+  "_id": {
+    "$oid": "64c178e50de4aef3f8b2c7b4"
+  },
+  "name": "gggg",
+  "state": "Terminado",
+  "problem_statement": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_justification": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "general_objective": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "specific_objectives": [
+    "s",
+    "s",
+    "s"
+  ],
+  "scope_feasibility": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_summary": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "technological_research": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "glossary": [
+    "s",
+    "ss",
+    "s"
+  ],
+  "date_presentation": "2023-05-01",
+  "approval_date": "2023-09-18",
+  "category": [
+    {
+      "$oid": "64bfd337c959eeb5e9431f7a"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64c177fd0de4aef3f8b2c759"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-26T19:49:57.433Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-26T19:49:57.433Z"
+  }
+},{
+  "_id": {
+    "$oid": "64c179100de4aef3f8b2c7d9"
+  },
+  "name": "ffff",
+  "state": "En proceso",
+  "problem_statement": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_justification": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "general_objective": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "specific_objectives": [
+    "f",
+    "f",
+    "f"
+  ],
+  "scope_feasibility": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_summary": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "technological_research": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "glossary": [
+    "f",
+    "f",
+    "f"
+  ],
+  "date_presentation": "2023-05-01",
+  "approval_date": "2023-07-31",
+  "category": [
+    {
+      "$oid": "64bfd337c959eeb5e9431f7a"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64b1a36792bbbb2e184413a5"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-26T19:50:40.618Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-26T19:50:40.618Z"
+  }
+},{
+  "_id": {
+    "$oid": "64c179840de4aef3f8b2c822"
+  },
+  "name": "yyyy",
+  "state": "En proceso",
+  "problem_statement": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_justification": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "general_objective": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "specific_objectives": [
+    "y",
+    "y",
+    "y"
+  ],
+  "scope_feasibility": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_summary": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "technological_research": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "glossary": [
+    "y",
+    "y",
+    "y"
+  ],
+  "date_presentation": "2023-05-29",
+  "approval_date": "2023-09-04",
+  "category": [
+    {
+      "$oid": "64bfd337c959eeb5e9431f7a"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64b596d6c14f31897d33821a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-26T19:52:36.132Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-26T19:52:36.132Z"
+  }
+},{
+  "_id": {
+    "$oid": "64c179b70de4aef3f8b2c842"
+  },
+  "name": "dddd",
+  "state": "En proceso",
+  "problem_statement": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_justification": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "general_objective": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "specific_objectives": [
+    "dd",
+    "dd",
+    "dd"
+  ],
+  "scope_feasibility": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_summary": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "technological_research": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "glossary": [
+    "d",
+    "d",
+    "d"
+  ],
+  "date_presentation": "2023-06-26",
+  "approval_date": "2023-08-23",
+  "category": [
+    {
+      "$oid": "64bfe4d2d71cf4ad91dd69b5"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64b59fc2c14f31897d3382c2"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-26T19:53:27.767Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-26T19:53:27.767Z"
+  }
+},{
+  "_id": {
+    "$oid": "64c179f00de4aef3f8b2c851"
+  },
+  "name": "ambientes_areas_cualificacion 44",
+  "state": "En proceso",
+  "problem_statement": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_justification": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "general_objective": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "specific_objectives": [
+    "ff",
+    "f",
+    "f"
+  ],
+  "scope_feasibility": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_summary": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "technological_research": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "glossary": [
+    "f",
+    "f",
+    "f"
+  ],
+  "date_presentation": "2023-05-29",
+  "approval_date": "2023-08-30",
+  "category": [
+    {
+      "$oid": "64bfe4d9d71cf4ad91dd69b9"
+    },
+    {
+      "$oid": "64bfe4d2d71cf4ad91dd69b5"
+    },
+    {
+      "$oid": "64bfe16a653baf6c467220a6"
+    },
+    {
+      "$oid": "64b1b3598b105840c75d11fa"
+    },
+    {
+      "$oid": "64bfd337c959eeb5e9431f7a"
+    },
+    {
+      "$oid": "64bfe6906dd0e97808d5f8ef"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64b59fc2c14f31897d3382c2"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-26T19:54:24.540Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-26T19:54:24.540Z"
+  }
+},{
+  "_id": {
+    "$oid": "64c17ae50de4aef3f8b2c8b1"
+  },
+  "name": "ffffffvd",
+  "state": "En proceso",
+  "problem_statement": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_justification": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "general_objective": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "specific_objectives": [
+    "f",
+    "f",
+    "f"
+  ],
+  "scope_feasibility": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "project_summary": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "technological_research": "Hola:\nSus compañeros de trabajo están intentando ponerse en contacto con usted desde Microsoft Teams.\n\nAngie ha mencionado Senasoft-Inteligencia Artificial AI-900 en Senasoft-Inteligencia Artificial AI-900 > 3-Material de Apoyo 📚\nBuen día Senasoft-Inteligencia Artificial AI-900 comparto acceso a material.    Paso a...[Image]",
+  "glossary": [
+    "f",
+    "f",
+    "f"
+  ],
+  "date_presentation": "2023-06-25",
+  "approval_date": "2023-07-28",
+  "category": [
+    {
+      "$oid": "64bfe6906dd0e97808d5f8ef"
+    },
+    {
+      "$oid": "64bfe4d2d71cf4ad91dd69b5"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64b1a36792bbbb2e184413a5"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-26T19:58:29.670Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-26T19:58:29.670Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ca734ac2723fa6932ab3a0"
+  },
+  "name": "PATOJITO MARKET 2",
+  "state": "En proceso",
+  "problem_statement": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "project_justification": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "general_objective": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "specific_objectives": [
+    "d",
+    "d",
+    "d"
+  ],
+  "scope_feasibility": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "project_summary": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "technological_research": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "glossary": [
+    "d",
+    "d",
+    "d"
+  ],
+  "date_presentation": "2023-05-29",
+  "approval_date": "2023-10-30",
+  "category": [
+    {
+      "$oid": "64bfd337c959eeb5e9431f7a"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64ca7311c2723fa6932ab394"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-02T15:16:26.716Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-02T15:16:26.716Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ca7446c2723fa6932ab408"
+  },
+  "name": "ambientes_areas_cualificacion 344",
+  "state": "En proceso",
+  "problem_statement": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "project_justification": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "general_objective": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "specific_objectives": [
+    "g",
+    "g",
+    "g"
+  ],
+  "scope_feasibility": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "project_summary": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "technological_research": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "glossary": [
+    "g",
+    "g",
+    "g"
+  ],
+  "date_presentation": "2023-05-29",
+  "approval_date": "2023-10-22",
+  "category": [
+    {
+      "$oid": "64bfe16a653baf6c467220a6"
+    },
+    {
+      "$oid": "64b1b3598b105840c75d11fa"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64ca72edc2723fa6932ab375"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-02T15:20:38.684Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-04T15:46:01.819Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ca7e983bed796bd2f9599d"
+  },
+  "name": "dfg",
+  "state": "En proceso",
+  "problem_statement": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "project_justification": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "general_objective": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "specific_objectives": [
+    "d",
+    "d",
+    "d"
+  ],
+  "scope_feasibility": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "project_summary": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "technological_research": "El mensaje de error \"Uncaught SyntaxError: 'undefined' is not valid JSON\" indica que está intentando analizar un valor que no es una cadena JSON válida. Aquí hay algunos pasos que puede seguir para solucionar y solucionar este problema:\n\nVerifique el valor antes de analizar: antes de analizar el valor usando JSON.parse(), asegúrese de verificar si el valor es undefineduna cadena JSON válida. Puede usar sentencias condicionales para manejar este escenario. Por ejemplo:",
+  "glossary": [
+    "d",
+    "d",
+    "d"
+  ],
+  "date_presentation": "2023-05-29",
+  "approval_date": "2023-10-30",
+  "category": [
+    {
+      "$oid": "64bfe4d2d71cf4ad91dd69b5"
+    },
+    {
+      "$oid": "64b1b3598b105840c75d11fa"
+    }
+  ],
+  "record": [
+    {
+      "$oid": "64ca72edc2723fa6932ab375"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-02T16:04:40.782Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-04T18:11:26.997Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f5fcbe7ab0fde0b65d4990"
+  },
+  "name": "",
+  "state": "",
+  "problem_statement": "La tarea que debes realizar se llama \"validación de datos previa a la inserción en la base de datos\". Esta tarea implica garantizar que los datos ingresados cumplan con ciertos criterios de validación antes de que sean almacenados en la base de datos. Para lograr esto, puedes implementar un proceso de validación mediante middleware o funciones personalizadas que verifiquen y aseguren la integridad de los datos antes de que se inserten en la base de datos.",
+  "project_justification": "La tarea que debes realizar se llama \"validación de datos previa a la inserción en la base de datos\". Esta tarea implica garantizar que los datos ingresados cumplan con ciertos criterios de validación antes de que sean almacenados en la base de datos. Para lograr esto, puedes implementar un proceso de validación mediante middleware o funciones personalizadas que verifiquen y aseguren la integridad de los datos antes de que se inserten en la base de datos.",
+  "general_objective": "La tarea que debes realizar se llama \"validación de datos previa a la inserción en la base de datos\". Esta tarea implica garantizar que los datos ingresados cumplan con ciertos criterios de validación antes de que sean almacenados en la base de datos. Para lograr esto, puedes implementar un proceso de validación mediante middleware o funciones personalizadas que verifiquen y aseguren la integridad de los datos antes de que se inserten en la base de datos.",
+  "specific_objectives": [
+    ""
+  ],
+  "scope_feasibility": "La tarea que debes realizar se llama \"validación de datos previa a la inserción en la base de datos\". Esta tarea implica garantizar que los datos ingresados cumplan con ciertos criterios de validación antes de que sean almacenados en la base de datos. Para lograr esto, puedes implementar un proceso de validación mediante middleware o funciones personalizadas que verifiquen y aseguren la integridad de los datos antes de que se inserten en la base de datos.",
+  "project_summary": "La tarea que debes realizar se llama \"validación de datos previa a la inserción en la base de datos\". Esta tarea implica garantizar que los datos ingresados cumplan con ciertos criterios de validación antes de que sean almacenados en la base de datos. Para lograr esto, puedes implementar un proceso de validación mediante middleware o funciones personalizadas que verifiquen y aseguren la integridad de los datos antes de que se inserten en la base de datos.",
+  "technological_research": "La tarea que debes realizar se llama \"validación de datos previa a la inserción en la base de datos\". Esta tarea implica garantizar que los datos ingresados cumplan con ciertos criterios de validación antes de que sean almacenados en la base de datos. Para lograr esto, puedes implementar un proceso de validación mediante middleware o funciones personalizadas que verifiquen y aseguren la integridad de los datos antes de que se inserten en la base de datos.",
+  "glossary": [
+    ""
+  ],
+  "date_presentation": "",
+  "approval_date": "",
+  "category": [],
+  "record": [
+    {
+      "$oid": "64ca72edc2723fa6932ab375"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-09-04T15:50:22.156Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-04T15:50:22.156Z"
+  }
+}]

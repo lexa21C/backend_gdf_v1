@@ -1,0 +1,321 @@
+[{
+  "_id": {
+    "$oid": "64a4323a54635f62c57c33a1"
+  },
+  "name": "ALGORItMIA",
+  "description": "no description",
+  "competence": [
+    "1"
+  ],
+  "quarter": [
+    {
+      "$oid": "6447d2d84a53b55975e2cf14"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-04T14:52:42.716Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-04T14:52:42.716Z"
+  }
+},{
+  "_id": {
+    "$oid": "64a4325a54635f62c57c33a4"
+  },
+  "name": "Algoritmia",
+  "description": "no description",
+  "competence": [
+    "1"
+  ],
+  "quarter": [
+    {
+      "$oid": "6447d2d84a53b55975e2cf14"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-04T14:53:14.966Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-04T14:53:14.966Z"
+  }
+},{
+  "_id": {
+    "$oid": "64a4327f54635f62c57c33a9"
+  },
+  "name": "ALGORITMIA",
+  "description": "no description",
+  "competence": [
+    "1"
+  ],
+  "quarter": [
+    {
+      "$oid": "6447d2d84a53b55975e2cf14"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-04T14:53:51.458Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-04T14:53:51.458Z"
+  }
+},{
+  "_id": {
+    "$oid": "64a4339da5da038244a3d8db"
+  },
+  "name": "Algoritmia2",
+  "description": "no description",
+  "competence": [
+    "1"
+  ],
+  "quarter": [
+    {
+      "$oid": "6447d2d84a53b55975e2cf14"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-04T14:58:37.493Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-04T14:58:37.493Z"
+  }
+},{
+  "_id": {
+    "$oid": "64a434bb5b321a807fb0db44"
+  },
+  "name": "Algoritmia5",
+  "description": "no description",
+  "competence": [
+    "1"
+  ],
+  "quarter": [
+    {
+      "$oid": "6447d2d84a53b55975e2cf14"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-04T15:03:23.122Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-04T15:03:23.122Z"
+  }
+},{
+  "_id": {
+    "$oid": "64a6eec4796e162b09b80bda"
+  },
+  "name": "Artefacto 1",
+  "description": "artefactoo",
+  "competence": [
+    "5282"
+  ],
+  "quarter": [
+    {
+      "$oid": "644a915fd7a62b8071ba0cbd"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-06T16:41:40.679Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-06T16:41:40.679Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b198eeabc460d7be55fc69"
+  },
+  "name": "Sdfsdsssss",
+  "description": "fsdfsd",
+  "competence": [
+    "2"
+  ],
+  "quarter": [
+    {
+      "$oid": "64b198daabc460d7be55fc41"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-14T18:50:22.264Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-14T18:50:27.236Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b6dabd244faa975b7546e2"
+  },
+  "name": "Uml",
+  "description": "hoalla",
+  "competence": [
+    "2"
+  ],
+  "quarter": [
+    {
+      "$oid": "64b6d749244faa975b7545b3"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-18T18:32:29.355Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T18:32:29.355Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b6dced9483941efbe22da5"
+  },
+  "name": "Aaa 33",
+  "description": "hhhh",
+  "competence": [
+    "2"
+  ],
+  "quarter": [
+    {
+      "$oid": "64b6da7d244faa975b75462d"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-18T18:41:49.529Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T18:50:28.680Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b6e02f2d3770ced60db5f5"
+  },
+  "name": "Prototipo",
+  "description": "ffff",
+  "competence": [
+    "2"
+  ],
+  "quarter": [
+    {
+      "$oid": "64b6d749244faa975b7545b3"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-18T18:55:43.159Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T18:55:43.159Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b6e09c2d3770ced60db624"
+  },
+  "name": "R",
+  "description": "r",
+  "competence": [
+    "2"
+  ],
+  "quarter": [
+    {
+      "$oid": "64b6d749244faa975b7545b3"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-18T18:57:32.354Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T18:57:32.354Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b6e0a62d3770ced60db63e"
+  },
+  "name": "Uml 4",
+  "description": "h",
+  "competence": [
+    "2"
+  ],
+  "quarter": [
+    {
+      "$oid": "64b6d749244faa975b7545b3"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-18T18:57:42.825Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T18:57:42.825Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b811581569ab13f6b14681"
+  },
+  "name": "Uml 43333",
+  "description": "no description",
+  "competence": [
+    "1"
+  ],
+  "quarter": [
+    {
+      "$oid": "64a4323a54635f62c57c33a1"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-19T16:37:44.829Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T16:37:44.829Z"
+  }
+},{
+  "_id": {
+    "$oid": "64b811ec1569ab13f6b146f4"
+  },
+  "name": "Patojito market",
+  "description": "fvv",
+  "competence": [
+    "2"
+  ],
+  "quarter": [
+    {
+      "$oid": "64b6d749244faa975b7545b3"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-19T16:40:12.143Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T16:40:12.143Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ba86793ffa19a3598047b3"
+  },
+  "name": "Ambientes areas cualificacion 44",
+  "description": "rrr",
+  "competence": [
+    "2"
+  ],
+  "quarter": [
+    {
+      "$oid": "64ba866d3ffa19a35980478a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-21T13:22:01.045Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-21T18:33:39.600Z"
+  }
+},{
+  "_id": {
+    "$oid": "64be789c508188365acc5e61"
+  },
+  "name": "Gg",
+  "description": "ggg",
+  "competence": [
+    "2"
+  ],
+  "quarter": [
+    {
+      "$oid": "64ba866d3ffa19a35980478a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-24T13:11:56.380Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-24T13:11:56.380Z"
+  }
+}]

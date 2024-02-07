@@ -1,0 +1,251 @@
+[{
+  "_id": {
+    "$oid": "64a7075a96ae5a16cadf4c5e"
+  },
+  "number_record": 2338368,
+  "start_date": {
+    "$date": "2022-06-19T05:00:00.000Z"
+  },
+  "finish_date": {
+    "$date": "2023-06-28T05:00:00.000Z"
+  },
+  "formation_program": [
+    "77"
+  ],
+  "user": [
+    {
+      "$oid": "64a59b163578badfa9f1eca3"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-06T18:26:34.315Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-06T18:26:34.315Z"
+  }
+},{
+  "_id": {
+    "$oid": "64a7083b96ae5a16cadf4c6b"
+  },
+  "number_record": 4444,
+  "start_date": {
+    "$date": "2023-06-26T00:00:00.000Z"
+  },
+  "finish_date": {
+    "$date": "2023-08-24T00:00:00.000Z"
+  },
+  "formation_program": [
+    "30"
+  ],
+  "user": [
+    {
+      "$oid": "64a5c718974b324d794e970c"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-06T18:30:19.236Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-06T18:30:19.236Z"
+  }
+},{
+  "_id": {
+    "$oid": "64a72df0e581bfbb850edffc"
+  },
+  "number_record": 45698,
+  "start_date": {
+    "$date": "2023-05-29T00:00:00.000Z"
+  },
+  "finish_date": {
+    "$date": "2023-06-20T00:00:00.000Z"
+  },
+  "formation_program": [
+    "30"
+  ],
+  "user": [
+    {
+      "$oid": "64a7278d96ae5a16cadf4e0f"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-06T21:11:12.367Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-06T21:11:12.367Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ac4b5bfff9a3fbbafb5e84"
+  },
+  "number_record": 101010,
+  "start_date": {
+    "$date": "2023-06-25T00:00:00.000Z"
+  },
+  "finish_date": {
+    "$date": "2023-08-01T00:00:00.000Z"
+  },
+  "formation_program": [
+    "63"
+  ],
+  "user": [
+    {
+      "$oid": "64ac4b0bfff9a3fbbafb5e71"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-10T18:18:03.226Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-10T18:18:03.226Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ac7f792f1f5717c4dd5bdc"
+  },
+  "number_record": 1111,
+  "start_date": {
+    "$date": "2023-06-25T00:00:00.000Z"
+  },
+  "finish_date": {
+    "$date": "2023-09-18T00:00:00.000Z"
+  },
+  "formation_program": [
+    "63"
+  ],
+  "user": [
+    {
+      "$oid": "64ac5abaa18c56f520050f77"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-10T22:00:25.648Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-10T22:00:25.648Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ad81879a3b4a1c4de43083"
+  },
+  "number_record": 2323232,
+  "start_date": {
+    "$date": "2023-06-25T00:00:00.000Z"
+  },
+  "finish_date": {
+    "$date": "2023-03-16T00:00:00.000Z"
+  },
+  "formation_program": [
+    "63"
+  ],
+  "user": [
+    {
+      "$oid": "64ac4b0bfff9a3fbbafb5e71"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-11T16:21:27.110Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-11T16:21:27.110Z"
+  }
+},{
+  "_id": {
+    "$oid": "64aea90d8ad7c5a458109c0e"
+  },
+  "number_record": 121345697,
+  "start_date": {
+    "$date": "2023-02-27T00:00:00.000Z"
+  },
+  "finish_date": {
+    "$date": "2023-07-24T00:00:00.000Z"
+  },
+  "formation_program": [
+    "65"
+  ],
+  "user": [
+    {
+      "$oid": "64aea8d48ad7c5a458109bfa"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-07-12T13:22:21.355Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-12T13:22:21.355Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ca72edc2723fa6932ab375"
+  },
+  "number_record": 2338365,
+  "start_date": "2023-05-02",
+  "finish_date": "2023-10-15",
+  "formation_program": [
+    "68"
+  ],
+  "user": [
+    {
+      "$oid": "64ca725ac2723fa6932ab31b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-02T15:14:53.274Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-02T15:14:53.274Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ca877cf1a2c7f6863d5fc2"
+  },
+  "number_record": 265899,
+  "start_date": "2023-05-29",
+  "finish_date": "2023-10-31",
+  "formation_program": [
+    "68"
+  ],
+  "user": [
+    {
+      "$oid": "64ca77ecc2723fa6932ab4c0"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-02T16:42:36.521Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-04T16:43:40.186Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f5f35f6b666f36a1999d5b"
+  },
+  "formation_program": [],
+  "user": [],
+  "createdAt": {
+    "$date": "2023-09-04T15:10:23.273Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-04T15:10:23.273Z"
+  }
+},{
+  "_id": {
+    "$oid": "64f602d683b1d7df07dcc081"
+  },
+  "number_record": 23,
+  "start_date": "2023-09-22",
+  "finish_date": "2023-10-07",
+  "formation_program": [
+    "68"
+  ],
+  "user": [
+    {
+      "$oid": "64edffc7362abe29ddea84b9"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-09-04T16:16:22.528Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-04T16:44:34.881Z"
+  }
+}]

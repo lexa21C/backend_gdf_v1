@@ -1,0 +1,107 @@
+[{
+  "_id": {
+    "$oid": "64ba84aef78ea88812fff909"
+  },
+  "number": 2002,
+  "competence": [
+    "5383",
+    "5375"
+  ],
+  "formation_program": [
+    "30"
+  ],
+  "createdAt": {
+    "$date": "2023-07-21T13:14:22.612Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-21T13:14:22.612Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ba863b3ffa19a359804745"
+  },
+  "number": 22,
+  "competence": [
+    "5383"
+  ],
+  "formation_program": [
+    "29"
+  ],
+  "createdAt": {
+    "$date": "2023-07-21T13:20:59.710Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-21T13:20:59.710Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ba866d3ffa19a35980478a"
+  },
+  "number": 1,
+  "competence": [
+    "2"
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "createdAt": {
+    "$date": "2023-07-21T13:21:49.044Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-24T14:42:36.022Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ba9128de2c3359c6319a8e"
+  },
+  "number": 24,
+  "competence": [
+    "5383"
+  ],
+  "formation_program": [
+    "29"
+  ],
+  "createdAt": {
+    "$date": "2023-07-21T14:07:36.621Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-21T14:07:36.621Z"
+  }
+},{
+  "_id": {
+    "$oid": "64bacfc51ac566f5ec032c52"
+  },
+  "number": 2,
+  "competence": [
+    "2",
+    "3227"
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "createdAt": {
+    "$date": "2023-07-21T18:34:45.875Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-24T14:42:42.434Z"
+  }
+},{
+  "_id": {
+    "$oid": "64bae80f4008740f43d1260c"
+  },
+  "number": 3,
+  "competence": [
+    "2",
+    "3226",
+    "3227"
+  ],
+  "formation_program": [
+    "68"
+  ],
+  "createdAt": {
+    "$date": "2023-07-21T20:18:23.094Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-24T14:42:47.643Z"
+  }
+}]

@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "6419e06c6ba47620307a98c3"
+  },
+  "type_profile": "Instructor"
+},{
+  "_id": {
+    "$oid": "6446c88e028bad6c50fad7fc"
+  },
+  "type_profile": "Instructor Lider",
+  "createdAt": {
+    "$date": "2023-04-24T18:21:02.194Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-24T18:21:02.194Z"
+  }
+},{
+  "_id": {
+    "$oid": "6446c898028bad6c50fad7fe"
+  },
+  "type_profile": "Administrador",
+  "createdAt": {
+    "$date": "2023-04-24T18:21:12.961Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-24T18:21:12.961Z"
+  }
+}]
