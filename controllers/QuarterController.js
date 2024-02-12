@@ -6,22 +6,21 @@ const Competences = require('../models/Competence.js')
 exports.allQuarters = async (req, res) => {
     const apiStructure = new ApiStructure();
     const { formation_program_id } = req.params;
-    console.log('quater')
+
     try {
         
         const formationProgram = await Formation_programs
         .findById(formation_program_id,'competence')
 
        
-        console.log(formationProgram.competence)
+
         const competenceIds =formationProgram.competence
 
 // Mapear cada ID y realizar una búsqueda en el modelo Competences
 const competencesData = await Promise.all(competenceIds.map(async (competenceId) => {
-    console.log(competenceId)
-    console.log(competenceId.toString())
+
   try {
-    // Buscar el documento de competencia por ID
+    // Buscar el documento de competencia por IDnpm start
     const competence = await Competences.findById(competenceId.toString()).lean();
 
     if (!competence) {
@@ -41,8 +40,7 @@ const competencesData = await Promise.all(competenceIds.map(async (competenceId)
 // Filtrar elementos nulos que podrían haber ocurrido por competencias no encontradas o errores
 const validCompetencesData = competencesData.filter((competenceData) => competenceData !== null);
 
-// Aquí tienes la información de todas las competencias encontradas
-console.log(validCompetencesData);
+
         if (!formationProgram) {
             apiStructure.setStatus(404, "info", "No se encontró el programa de formación");
             return res.json(apiStructure.toResponse());
@@ -57,6 +55,7 @@ console.log(validCompetencesData);
             quarters: quarters,
             competences: competences
         }];
+      
         apiStructure.setResult(formArtifacts);
 
         return res.json(apiStructure.toResponse());
@@ -87,13 +86,15 @@ exports.createQuarter = async (req, res) => {
             });
 
             apiStructure.setResult(newQuarter, 'Trimestre creado con éxito');
+            console.log('Trimestre creado con éxito',newQuarter)
+            return  res.json(apiStructure.toResponse());
         }
     } catch (error) {
         console.error("Error en createQuarter:", error);
         apiStructure.setStatus(500, "Error", "Ocurrió un error al procesar la solicitud. Por favor, inténtelo de nuevo más tarde.");
+        return  res.json(apiStructure.toResponse());
     }
 
-    res.json(apiStructure.toResponse());
 };
 
 
@@ -126,6 +127,7 @@ exports.deleteQuarter = async (req, res) => {
 
     try {
         const { quarterId } = req.params;
+        console.log(quarterId)
         const deletedQuarter = await Quarter.findByIdAndDelete(quarterId);
 
         if (deletedQuarter) {
