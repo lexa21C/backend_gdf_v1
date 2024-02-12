@@ -31,7 +31,7 @@ exports.all = async (req, res) => {
 
 exports.allRecords = async (req, res) => {
     const apiStructure = new ApiStructure();
-    console.log('records')
+    console.log('records 223')
     try {
         const { formationPrograms_Id } = req.params;
 

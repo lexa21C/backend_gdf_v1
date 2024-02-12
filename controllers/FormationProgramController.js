@@ -277,16 +277,19 @@ exports.deleteFormationPrograms = async (req, res) => {
         const idFormationPrograms = req.params.id_formation_programs;
 
         const formationPrograms = await Formation_programs.findById(idFormationPrograms);
+        console.log(formationPrograms)
+
         if (formationPrograms) {
+            console.log('eliminar');
+            await Formation_programs.findByIdAndDelete(idFormationPrograms); // Mueve esta línea aquí
             apiStructure.setResult("Programa de formación eliminado correctamente");
+            return res.json(apiStructure.toResponse());
         } else {
             apiStructure.setStatus(404, "Info", "No existe el programa de formación");
         }
-
-        await Formation_programs.findByIdAndDelete(idFormationPrograms);
     } catch (error) {
         console.error("Error al eliminar el programa de formación:", error);
-        apiStructure.setStatus(500, "Error ", "Ocurrió un error  al eliminar el programa de formación.");
+        apiStructure.setStatus(500, "Error", "Ocurrió un error al eliminar el programa de formación.");
     }
 
     return res.json(apiStructure.toResponse());

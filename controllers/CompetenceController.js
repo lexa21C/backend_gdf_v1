@@ -135,31 +135,60 @@ exports.createCompetences = async (req, res) => {
 
 
 // }
-exports.compoetenceByFormation = async (req, res) => {
+exports.compoetenceByFormation= async (req, res) => {
     const apiStructure = new ApiStructure();
     const { formation_program_id } = req.params;
-
+    const competence = []
     try {
-        const formationProgram = await Formation_programs.findById(formation_program_id);
+        
+        const formationProgram = await Formation_programs
+        .findById(formation_program_id,'competence')
+        console.log('--------------------------------------------------------')
+        console.log(formationProgram)
+        console.log('--------------------------------------------------------')
 
-        if (formationProgram) {
-            const quaterProgram = Array.from({ length: formationProgram.total_duration / 3 }, (_, i) => i + 1);
 
-            const competences = await Competence.find({ program: formation_program_id });
-            const FormArtifacts = [{
-                quaters: quaterProgram,
-                competences: competences
-            }];
+        const competenceIds =formationProgram.competence
+        console.log(competenceIds)
 
-            apiStructure.setResult(FormArtifacts);
-        } else {
-            apiStructure.setStatus(404, "Info", "No se encuentra el programa de formación");
-        }
-    } catch (error) {
-        console.error("Error en competenceByFormation:", error);
-        apiStructure.setStatus(500, "Error ", "Ocurrió un error al procesar la solicitud. Por favor, inténtelo de nuevo más tarde.");
+// Mapear cada ID y realizar una búsqueda en el modelo Competences
+const competencesData = await Promise.all(competenceIds.map(async (competenceId) => {
+    console.log(competenceId.toString())
+
+  try {
+    // Buscar el documento de competencia por ID
+    const competence = await Competences.findById(competenceId.toString()).lean();
+
+
+    if (!competence) {
+      // Manejar el caso donde no se encuentra una competencia con el ID dado
+      console.warn(`No se encontró la competencia con ID: ${competenceId}`);
+      return null;
     }
 
+    return competence;
+  } catch (error) {
+    // Manejar errores durante la búsqueda de competencia
+    console.error(`Error al buscar la competencia con ID: ${competenceId}`, error);
+    return null;
+  }
+}));
+
+
+
+        if (!formationProgram) {
+            apiStructure.setStatus(404, "info", "No se encontró el programa de formación");
+            return res.json(apiStructure.toResponse());
+        }
+        console.log()
+        
+        apiStructure.setResult(competencesData);
+
+        return res.json(apiStructure.toResponse());
+    } catch (error) {
+        console.error("Error en allQuarters:", error);
+        apiStructure.setStatus(500, "Error", "Ocurrió un error al procesar la solicitud. Por favor, inténtelo de nuevo más tarde.");
+    }
     return res.json(apiStructure.toResponse());
 };
 
