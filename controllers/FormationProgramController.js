@@ -7,7 +7,7 @@ var Programs_level=require("../models/Program_levels.js")
 var mongoose = require('mongoose')
 exports.allFormationPrograms = async (req, res) => {
     try {
-        const formationPrograms = await Formation_programs.find({}, '_id program_name program_code total_duration program_version competence program_level thematic_line').populate('program_level').populate('thematic_line');
+        const formationPrograms = await Formation_programs.find({}, '_id program_name program_code total_duration program_version competence program_level thematic_line').populate('program_level').populate('thematic_line').populate('competence');
         // Puedes ajustar la proyección para incluir/excluir campos según tus necesidades
 
         if (formationPrograms.length > 0) {
@@ -116,9 +116,7 @@ exports.createFormstionPrograms = async (req, res) => {
             program_level,
             thematic_line
         } = req.body;
-        console.log(req.body)
-        console.log('program level')
-        console.log(program_level)
+        
         
         // if (!Array.isArray(competence)) {
         //     apiStructure.setStatus(400, "Info", "El campo de competencia no es un array");
@@ -224,7 +222,7 @@ exports.formationProgramsById = async (req, res) => {
 
 exports.updateFormationPrograms = async (req, res) => {
     const apiStructure = new estructuraApi();
-    const id_formation_programs = req.params.id_formation_programs;
+    const id_formation_program = req.params.id_formation_program;
 
     try {
         const {
@@ -232,24 +230,22 @@ exports.updateFormationPrograms = async (req, res) => {
             program_name,
             program_code,
             total_duration,
-            Program_version,
-            program_start_date,
-            program_end_date,
+            program_version,
             competence,
             program_level,
             thematic_line
         } = req.body;
+        console.log(req.body)
 
         const updatedFormationProgram = await Formation_programs.findByIdAndUpdate(
-            id_formation_programs,
+            id_formation_program,
             {
                 _id,
                 program_name,
                 program_code,
                 total_duration,
-                Program_version,
-                program_start_date,
-                program_end_date,
+                program_version,
+              
                 competence,
                 program_level,
                 thematic_line
@@ -258,8 +254,11 @@ exports.updateFormationPrograms = async (req, res) => {
         );
 
         if (updatedFormationProgram) {
+            console.log('actualizar')
             apiStructure.setResult(updatedFormationProgram, "Programa de formación actualizado correctamente");
+            return res.json(apiStructure.toResponse());
         } else {
+            console.log('no actualiza')
             apiStructure.setStatus(404, "Info", "No existe el programa de formación");
         }
     } catch (error) {
@@ -330,7 +329,7 @@ exports.allFormationProgram = async (req, res) => {
     console.log(id_formation_program)
     
     try {
-        const formationProgram = await Formation_programs.findById(id_formation_program).populate('competence');
+        const formationProgram = await Formation_programs.findById(id_formation_program).populate('competence').populate('program_level').populate('thematic_line');
 
         if (formationProgram) {
             apiStructure.setResult(formationProgram);

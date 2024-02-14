@@ -8,7 +8,9 @@ var Formation_programs = Schema({
     },
     program_name: String,
     program_code: Number,
-    total_duration:String,
+    total_duration:{
+        type: mongoose.Schema.Types.Mixed
+    },
     Program_version:String,
 
     competence : [{

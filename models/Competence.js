@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var Competences = Schema(
   {
     _id: {
-      type: mongoose.Schema.Types.Mixed,
+      type: String,
       default: () => mongoose.Types.ObjectId()// Genera automáticamente un ObjectId y lo convierte a string
   },
     labor_competition: String,
