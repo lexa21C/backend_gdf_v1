@@ -116,6 +116,7 @@ exports.createFormstionPrograms = async (req, res) => {
             program_level,
             thematic_line
         } = req.body;
+        console.log(req.body);
         
         
         // if (!Array.isArray(competence)) {
@@ -244,17 +245,16 @@ exports.updateFormationPrograms = async (req, res) => {
                 program_name,
                 program_code,
                 total_duration,
-                program_version,
-              
+                program_version,            
                 competence,
                 program_level,
                 thematic_line
             },
             { new: true }
         );
-
+        console.log('actualiza')
         if (updatedFormationProgram) {
-            console.log('actualizar')
+            console.log('actualizar', updatedFormationProgram)
             apiStructure.setResult(updatedFormationProgram, "Programa de formación actualizado correctamente");
             return res.json(apiStructure.toResponse());
         } else {

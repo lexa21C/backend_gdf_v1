@@ -72,11 +72,12 @@ exports.createCompetences = async (req, res) => {
     // program= arrayF
     // const foundprogram= await Formation_programs.findOne({name : "ADSO"})
     // res.json(foundformation_programs._id)
+    const laborCompetitionUpperCase = labor_competition.toUpperCase();
 
     try {
         const createdCompetence = await Competences.create({
             _id: newObjectIdString,
-            labor_competition,
+            labor_competition: laborCompetitionUpperCase,
             labor_competence_code,
             program_competition,
             labor_competition_version,
@@ -238,11 +239,13 @@ exports.updateCompetences = async (req, res) => {
             quarter,
             program
         } = req.body;
+        const laborCompetitionUpperCase = labor_competition.toUpperCase();
+
 
         const competenceUpdate = await Competences.findByIdAndUpdate(
             id_competence,
             {
-                labor_competition,
+                labor_competition: laborCompetitionUpperCase,
                 labor_competence_code,
                 competition_name,
                 labor_competition_version,

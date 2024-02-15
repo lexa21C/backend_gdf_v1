@@ -110,11 +110,12 @@ exports.updateResults = async (req, res) => {
             apiStructure.setStatus(404, "Info", "No existe el Resultado de Aprendizaje");
             return res.json(apiStructure.toResponse());
         }
+        const learningResultUpperCase = reqResult.learning_result.toUpperCase();
 
         // Actualizar los datos del resultado de aprendizaje
         const updatedResult = await Learning_results.findByIdAndUpdate(code, {
             learning_result_code:reqResult.learning_result_code,
-            learning_result: reqResult.learning_result,
+            learning_result: learningResultUpperCase,
             competence: reqResult.competence
         }, { new: true });
 

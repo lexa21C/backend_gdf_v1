@@ -11,11 +11,11 @@ var Formation_programs = Schema({
     total_duration:{
         type: mongoose.Schema.Types.Mixed
     },
-    Program_version:String,
+    program_version:String,
 
     competence : [{
         ref: "Competences",
-        type: mongoose.Schema.Types.Number,
+        type: mongoose.Schema.Types.Mixed,
     }],
 
     program_level:{
