@@ -5,46 +5,40 @@ const userModel = require('../models/Users.js');  // Importar el modelo de usuar
 const training_center = require('../models/Training_centers');  // Importar el modelo de centros de entrenamiento
 const ApiStructure = require('../helpers/responseApi.js');  // Importar clase para estructurar respuestas JSON
 
-// Definir la función controladora para el proceso de registro de usuarios
 exports.signup = async (req, res) => {
-  // Desestructurar las propiedades del cuerpo de la solicitud
-  const { email, password } = req.body;
-  // Crear una instancia de ApiStructure para manejar la respuesta
-  const apiStructure = new ApiStructure();
   try {
-    // Buscar un usuario en la base de datos por correo electrónico y cargar relaciones
-    const user = await userModel.findOne({ email }).populate('formation_program').populate('type_profile').populate('training_center');
+    const { email, password } = req.body;
+    const apiStructure = new ApiStructure();
 
-    // Verificar si se encontró un usuario en la base de datos
+    const user = await userModel.findOne({ email })
+      .populate('formation_program')
+      .populate('type_profile')
+      .populate('training_center');
+
     if (!user) {
-      apiStructure.setStatus("Error", 400, "no existe el usuario");
+      apiStructure.setStatus("Error", 400, "Usuario no encontrado");
       return res.json(apiStructure.toResponse());
-      
-    } else {
-      // Verificar la contraseña proporcionada con la contraseña almacenada
-      const checkPassword = await compare(password, user.password);
-
-      // Generar un token de sesión
-      const tokenSession = await tokenSign(user);
-   // Si la contraseña es correcta, enviar la respuesta JSON con el usuario y el token
-      if (checkPassword) {
-        return res.send({
-          user: user,
-          tokenSession,
-        });
-      }
-      // Si la contraseña no es correcta, establecer el estado como error de credenciales
-      if (!checkPassword) {
-        apiStructure.setStatus(409, "error", "credenciales inválidas");
-      }
     }
-    // Enviar la respuesta JSON generada por apiStructure
-    res.json(apiStructure.toResponse());
+
+    const isPasswordValid = await compare(password, user.password);
+    const tokenSession = await tokenSign(user);
+
+    if (isPasswordValid) {
+      console.log('Autenticación exitosa');
+      return res.json({
+        user,
+        tokenSession,
+      });
+    } else {
+      console.log('Autenticación fallida');
+      apiStructure.setStatus(409, "Error", "Credenciales inválidas");
+      return res.json(apiStructure.toResponse());
+    }
   } catch (err) {
-    // Manejar errores y establecer el estado como error interno del servidor
-    apiStructure.setStatus(500, 'error', err.message);
-    // Enviar la respuesta JSON generada por apiStructure
-    res.json(apiStructure.toResponse());
+    console.error(err);
+    const apiStructure = new ApiStructure();
+    apiStructure.setStatus(500, 'Error', 'Error del servidor');
+    return res.json(apiStructure.toResponse());
   }
 };
 

@@ -26,7 +26,7 @@ exports.allUser = async (req, res) => {
       apiStructure.setStatus(500, "Error interno", "Ocurrió un error interno al obtener usuarios.");
   }
 
-  res.json(apiStructure.toResponse());
+  return res.json(apiStructure.toResponse());
 };
 
 
@@ -95,13 +95,16 @@ exports.UpdateUser = async (req, res) => {
 
     if (password) {
       const passwordHash = await encrypt(password);
-      await User.findByIdAndUpdate(id_user, {
+      const user = await User.findByIdAndUpdate(id_user, {
         complete_names,
         email,
         password: passwordHash,
         type_profile,
         formation_program,
-      });
+      },{ new: true });
+
+      
+      apiStructure.setResult(user, "Usuario Actualizado Exitosamente");
     } else {
       await User.findByIdAndUpdate(id_user, {
         complete_names,
@@ -109,14 +112,17 @@ exports.UpdateUser = async (req, res) => {
         type_profile,
         formation_program,
       });
+      apiStructure.setResult({}, "Usuario Actualizado Exitosamente");
     }
 
-    apiStructure.setResult({}, "Usuario Actualizado Exitosamente");
-    res.json(apiStructure.toResponse());
+   
+    return res.json(apiStructure.toResponse());
   } catch (err) {
     apiStructure.setStatus("Failed", 400, err.message);
     res.json(apiStructure.toResponse());
+    return res.json(apiStructure.toResponse());
   }
+  
 };
 
 

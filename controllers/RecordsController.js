@@ -62,7 +62,7 @@ exports.recordById = async (req, res) => {
 
     try {
         const { idRecord } = req.params;
-        const record = await Records.findById(idRecord);
+        const record = await Records.findById(idRecord).populate('user');
 
         if (record) {
             apiStructure.setResult(record, "Registro obtenido correctamente");
@@ -80,7 +80,7 @@ exports.recordById = async (req, res) => {
 exports.createRecords = async (req, res) => {
     const { number_record, start_date, finish_date, formation_program, user } = req.body;
     const apiStructure = new ApiStructure();
-
+    console.log('fecha',start_date)
     try {
         const existingRecord = await Records.findOne({ number_record: number_record });
         if (existingRecord) {
