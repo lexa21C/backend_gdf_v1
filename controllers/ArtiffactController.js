@@ -96,17 +96,13 @@ exports.createArtiffacts = async (req, res) => {
         // Verificar si el nombre ya existe en la base de datos
         const existingArtifact = await Artiffacts.findOne({ name: formattedName });
 
-        if (existingArtifact) {
-            apiStructure.setStatus(409, "Conflict", `Ya existe un Artefacto con el nombre '${formattedName}'`);
-        } else {
-            // Actualizar el nombre formateado en el objeto antes de crearlo
-            body.name = formattedName;
+          // Actualizar el nombre formateado en el objeto antes de crearlo
+          body.name = formattedName;
 
-            // Crear el Artefacto
-            const createdArtifact = await Artiffacts.create(body);
+          // Crear el Artefacto
+          const createdArtifact = await Artiffacts.create(body);
 
-            apiStructure.setResult(createdArtifact, "Artefacto creado exitosamente");
-        }
+          apiStructure.setResult(createdArtifact, "Artefacto creado exitosamente");
     } catch (error) {
         console.error("Error en createArtifacts:", error);
         apiStructure.setStatus(500, "Error ", "Se ha producido un error al intentar crear el Artefacto. Por favor, inténtelo nuevamente más tarde.");
